@@ -21,9 +21,9 @@ jobs:
     - name: Upload to release
       uses: ncipollo/release-action@main
       with:
-        artifacts: aria2c-fast_x64.exe
-        name: Aria2-Fast master
-        tag: Aria2-Fast master
+        artifacts: "aria2c-fast_x64.exe"
+        name: "Aria2-Fast master"
+        tag: "Aria2-Fast master"
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
         
