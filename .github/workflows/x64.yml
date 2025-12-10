@@ -19,8 +19,11 @@ jobs:
         id=$(sudo docker create aria2-mingw)
         sudo docker cp $id:/aria2/src/aria2c.exe ./aria2c-fast_x64.exe
     - name: Upload to release
-      uses: JasonEtco/upload-to-release@master
+      uses: ncipollo/release-action@main
       with:
-        args: aria2c-fast_x64.exe application/vnd.microsoft.portable-executable
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: aria2c-fast_x64.exe
+        name: "Aria2-Fast master"
+        tag: v1
+        token: ${{ secrets.GITHUB_TOKEN }}
+        allowUpdates: true
+        
